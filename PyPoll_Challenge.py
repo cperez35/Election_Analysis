@@ -8,7 +8,7 @@ import os
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("Resources", "election_results.csv")
 # Add a variable to save the file to a path.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
+file_to_save = os.path.join("analysis", "election_results.txt")
 
 # Initialize a total vote counter.
 total_votes = 0
@@ -85,7 +85,8 @@ with open(file_to_save, "w") as txt_file:
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
         f"-------------------------\n\n"
-        f"County Votes:\n")
+        f"County Votes:\n"
+        f"--------------------------\n")
     print(election_results, end="")
 
     txt_file.write(election_results)
@@ -117,10 +118,14 @@ with open(file_to_save, "w") as txt_file:
     winning_county = (
         f"-------------------------\n"
         f"Largest County Turnout: {winning_county}\n"
+        f"-------------------------\n\n"
+        f"Candidate Results\n"
         f"-------------------------\n"
     )
     print(winning_county)
 
+    txt_file.write(winning_county)
+    
     # 8: Save the county with the largest turnout to a text file 
 
     # Save the final candidate vote count to the text file.
